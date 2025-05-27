@@ -1,0 +1,290 @@
+:root {
+    --primary: #0a192f;
+    --secondary: #00c6ff;
+    --accent: #ff4d4d;
+    --background: #0a192f;
+    --text: #ffffff;
+    --input-bg: #1a2f4f;
+    --result-bg: #112240;
+    --neon: #00f2fe;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Animated Background */
+.gradient-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #00f2fe);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    z-index: -1;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Core Components */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.hero {
+    text-align: center;
+    padding: 4rem 0;
+    margin-bottom: 3rem;
+}
+
+.app-title {
+    font-size: 4.5rem;
+    letter-spacing: 4px;
+    margin-bottom: 1rem;
+}
+
+.title-gradient {
+    background: linear-gradient(45deg, #00f2fe, #4facfe);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.neon-text {
+    color: var(--neon);
+    text-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
+}
+
+.module-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.module-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.module-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--neon);
+    box-shadow: 0 10px 30px rgba(0, 242, 254, 0.2);
+}
+
+.module-container {
+    background: var(--input-bg);
+    border: 2px solid var(--secondary);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+#targetInput {
+    background: var(--input-bg);
+    border: 2px solid var(--secondary);
+    color: var(--text);
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    width: 100%;
+}
+
+#resultsOutput {
+    background: var(--result-bg);
+    color: var(--text);
+    border: 2px solid var(--secondary);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    white-space: pre-wrap;
+    font-family: 'Courier New', monospace;
+}
+
+/* Error States */
+.error-text {
+    color: #ff4444 !important;
+}
+
+.hidden {
+    display: none;
+}
+/* Add these fixes at the end */
+#moduleContainer {
+    position: relative;
+    z-index: 1000;
+    color: var(--text) !important;
+}
+
+#moduleContainer.hidden {
+    display: none;
+}
+
+#targetInput {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+#resultsSection {
+    margin-top: 2rem;
+    background: var(--result-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+#resultsOutput {
+    max-height: 60vh;
+    overflow: auto;
+}
+
+.scan-btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+.download-btn {
+    margin-top: 1rem;
+}
+/* Add these fixes at the end */
+#moduleContainer {
+    position: relative;
+    z-index: 1000;
+    background: var(--input-bg) !important;
+    color: var(--text) !important;
+    border: 2px solid var(--secondary) !important;
+    margin-top: 2rem;
+}
+
+#targetInput {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    background: var(--input-bg);
+    color: var(--text);
+    border: 2px solid var(--secondary);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+#targetInput::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+.scan-btn {
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.2rem;
+    background: linear-gradient(45deg, var(--secondary), var(--accent)) !important;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.visible {
+    display: block !important;
+}
+
+#resultsSection {
+    margin-top: 2rem;
+    background: var(--result-bg);
+    border-radius: 8px;
+    padding: 2rem;
+}
+/* Add these fixes */
+#moduleContainer {
+    display: block !important; /* Override hidden class */
+    opacity: 1 !important;
+    pointer-events: all !important;
+}
+
+#targetInput {
+    all: initial; /* Reset browser defaults */
+    width: 100%;
+    padding: 1rem;
+    background: var(--input-bg);
+    border: 2px solid var(--secondary);
+    color: var(--text);
+    font-size: 1.1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+#targetInput:focus {
+    outline: 2px solid var(--neon);
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+}
+
+/* Ensure click-through prevention */
+.module-container {
+    pointer-events: all;
+    position: relative;
+    z-index: 9999;
+}
+/* Add to static/css/style.css */
+.download-btn {
+    background: linear-gradient(45deg, #00f2fe, #4facfe);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.download-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.3),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.download-btn:hover::before {
+    left: 100%;
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 242, 254, 0.4);
+}
