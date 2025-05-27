@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "Installing OSINT404 dependencies..."
+echo "Installing IntelHawk dependencies..."
 sudo apt update
 sudo apt install -y \
     nmap \
