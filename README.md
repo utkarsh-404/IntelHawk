@@ -6,7 +6,7 @@
 ---
 
 ![IntelHawk Demo](screenshots/home.png) 
-
+*See More workings in screenshots folder*
 ---
 
 ## 🚀 Features
