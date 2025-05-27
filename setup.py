@@ -11,7 +11,7 @@ REQUIRED_TOOLS = {
     'theHarvester': 'pip install theharvester',
     'whatweb': 'sudo apt install whatweb',
     'bchecker': [
-        'git clone https://github.com/yourusername/Breach-Checker.git',
+        'git clone https://github.com/x404xx/Breach-Checker',
         'cd Breach-Checker && pip install -r requirements.txt'
     ]
 }
