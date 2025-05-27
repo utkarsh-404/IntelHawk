@@ -1,0 +1,9 @@
+Flask==3.0.0
+python-dotenv==1.0.0
+python-nmap==0.7.1
+requests==2.31.0
+python-whois==0.9.3
+beautifulsoup4==4.12.2
+pyfiglet==1.0.2
+colorama==0.4.6
+selenium==4.9.0
