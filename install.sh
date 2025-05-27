@@ -9,7 +9,7 @@ sudo apt install -y \
     python3-pip \
     python3-nmap
 # Install Breach-Checker
-git clone https://github.com/yourusername/Breach-Checker.git
+https://github.com/x404xx/Breach-Checker
 cd Breach-Checker
 pip install -r requirements.txt
 cd ..
