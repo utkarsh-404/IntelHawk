@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntelHawk - OSINT Suite</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="gradient-bg"></div>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1 class="app-title">
+                <span class="title-gradient">Intel</span><span class="neon-text">Hawk</span>
+            </h1>
+            <p class="tagline">Advanced Cyber Reconnaissance Platform</p>
+        </div>
+
+        <!-- Module Grid -->
+        <!-- In the module-grid div, replace existing cards with these -->
+<div class="module-grid">
+    <!-- Network Scanner -->
+    <div class="module-card" data-module="nmap">
+        <div class="module-icon"><i class="fas fa-network-wired"></i></div>
+        <h3>Network Scanner</h3>
+        <p>Port scanning & service detection</p>
+    </div>
+
+    <!-- Breach Check -->
+    <div class="module-card" data-module="breach">
+        <div class="module-icon"><i class="fas fa-shield-alt"></i></div>
+        <h3>Breach Check</h3>
+        <p>Email & password breach detection</p>
+    </div>
+
+    <!-- WHOIS Lookup -->
+    <div class="module-card" data-module="whois">
+        <div class="module-icon"><i class="fas fa-search"></i></div>
+        <h3>WHOIS Lookup</h3>
+        <p>Domain registration details</p>
+    </div>
+
+    <!-- Subdomain Finder -->
+    <div class="module-card" data-module="subdomains">
+        <div class="module-icon"><i class="fas fa-sitemap"></i></div>
+        <h3>Subdomain Finder</h3>
+        <p>Discover hidden subdomains</p>
+    </div>
+
+    <!-- Email Harvester -->
+    <div class="module-card" data-module="email">
+        <div class="module-icon"><i class="fas fa-envelope"></i></div>
+        <h3>Email Harvester</h3>
+        <p>Collect email addresses</p>
+    </div>
+
+    <!-- Tech Detection -->
+    <div class="module-card" data-module="tech">
+        <div class="module-icon"><i class="fas fa-code"></i></div>
+        <h3>Tech Detection</h3>
+        <p>Identify website technologies</p>
+    </div>
+
+    <!-- VirusTotal Check -->
+    <div class="module-card" data-module="virustotal">
+        <div class="module-icon"><i class="fas fa-shield-virus"></i></div>
+        <h3>VirusTotal Check</h3>
+        <p>Scan for malicious content</p>
+    </div>
+
+    <!-- IP Geolocation -->
+    <div class="module-card" data-module="geoip">
+        <div class="module-icon"><i class="fas fa-globe"></i></div>
+        <h3>IP Geolocation</h3>
+        <p>Locate IP addresses</p>
+    </div>
+</div>
+
+        <!-- Module Container -->
+        <!-- Module Container -->
+<div class="module-container hidden" id="moduleContainer">
+    <div class="module-header">
+        <h2 id="moduleTitle">Select a Module</h2> <!-- Dynamic title -->
+        <button class="close-module">&times;</button>
+    </div>
+    
+    <div class="module-content">
+        <div class="input-section">
+            <input type="text" 
+                   id="targetInput" 
+                   placeholder="Enter target based on selected module"
+                   autocomplete="off">
+            <button class="scan-btn" id="startScan">
+                <i class="fas fa-rocket"></i> Launch Scan
+            </button>
+        </div>
+        
+        <div class="results-section hidden" id="resultsSection">
+            <div class="results-header">
+                <h3>Scan Results</h3>
+                <button class="download-btn" id="downloadReport">
+                    <i class="fas fa-download"></i> Download Report
+                </button>
+            </div>
+            <pre id="resultsOutput"></pre>
+        </div>
+    </div>
+</div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
